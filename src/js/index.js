@@ -1,20 +1,15 @@
 (function() {
     var button = document.getElementById('click-me-button')
 
-    var boo = function boo() {
-        console.log('boo inside foo')
+    var foo = function foo (msg) {
+        console.log(msg)
     }
 
-    var foo = function foo(payload) {
-        payload()
-    }
-
-    var obj = {
-        testField: 2317
-    }
+    foo.testProp = 'test prop'
 
     button.addEventListener("click", (event) => {
-        foo(boo)
+        foo('you')
+        console.log(foo.__proto__.__proto__)
     })
 
 })()
